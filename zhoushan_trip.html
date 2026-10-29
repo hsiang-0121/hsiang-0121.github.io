@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176b66">
+  <title>舟山两日自驾游｜海岛、沙滩与海鲜</title>
+  <style>
+    :root {
+      --primary: #176b66;
+      --primary-light: #e8f5f1;
+      --ink: #243634;
+      --muted: #6b7c78;
+      --paper: #fffdf8;
+      --line: #e4eae5;
+      --sand: #f5ead8;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: #f2f5f1;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Microsoft YaHei", "PingFang SC", sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: var(--primary); }
+
+    .hero {
+      min-height: 430px;
+      padding: 64px 22px 56px;
+      color: white;
+      background:
+        linear-gradient(180deg, rgba(9, 46, 48, .18), rgba(9, 46, 48, .82)),
+        url("https://dimg04.c-ctrip.com/images/10071f000001h6wpm1C99_W_750_0.jpg?proc=autoorient")
+        center 48% / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-inner {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: 30px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      background: rgba(255,255,255,.12);
+    }
+
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.2;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0;
+      font-size: 16px;
+      color: rgba(255,255,255,.92);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .hero-tags span {
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.16);
+      font-size: 13px;
+    }
+
+    .container {
+      width: min(100% - 28px, 1000px);
+      margin: 24px auto 48px;
+    }
+
+    .quick-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      background: rgba(242,245,241,.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .quick-nav a {
+      flex: 0 0 auto;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      color: var(--ink);
+      background: white;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .quick-nav a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .panel {
+      margin-top: 20px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 5px 22px rgba(29, 65, 54, .035);
+    }
+
+    .section-heading {
+      margin: 0 0 6px;
+      font-size: 25px;
+      line-height: 1.35;
+    }
+
+    .section-intro {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .overview-item {
+      padding: 15px;
+      border-radius: 13px;
+      background: #f5f8f4;
+    }
+
+    .overview-item .label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .overview-item strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .route-day {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .day-number {
+      display: grid;
+      place-items: center;
+      flex: 0 0 52px;
+      height: 52px;
+      border-radius: 15px;
+      color: white;
+      background: var(--primary);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .day-number small {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+    }
+
+    .route-day h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .route-day p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .route-line {
+      position: relative;
+      margin-left: 24px;
+      padding-left: 25px;
+      border-left: 2px solid #d8e8e0;
+    }
+
+    .stop {
+      position: relative;
+      margin-bottom: 23px;
+    }
+
+    .stop:last-child { margin-bottom: 0; }
+
+    .stop::before {
+      position: absolute;
+      top: 8px;
+      left: -33px;
+      width: 13px;
+      height: 13px;
+      border: 3px solid var(--paper);
+      border-radius: 50%;
+      background: #4d9c87;
+      content: "";
+      box-shadow: 0 0 0 1px #b8d7cb;
+    }
+
+    .stop-time {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .stop h4 {
+      margin: 3px 0 5px;
+      font-size: 17px;
+    }
+
+    .stop p {
+      margin: 0 0 9px;
+      color: #52635f;
+      font-size: 14px;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 11px;
+      border: 1px solid #c9e2d8;
+      border-radius: 9px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .map-link:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      border-radius: 12px;
+      background: #e5ece7;
+      cursor: zoom-in;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+
+    .photo:hover img { transform: scale(1.045); }
+
+    .photo::after {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      padding: 3px 8px;
+      border-radius: 20px;
+      color: white;
+      background: rgba(0,0,0,.48);
+      content: "点击放大";
+      font-size: 11px;
+    }
+
+    .photo figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 28px 10px 8px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0,0,0,.5));
+      font-size: 12px;
+      pointer-events: none;
+    }
+
+    .attraction {
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .attraction:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .attraction h3 {
+      margin: 0 0 7px;
+      font-size: 19px;
+    }
+
+    .attraction p {
+      margin: 6px 0;
+      color: #52635f;
+      font-size: 14px;
+    }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .restaurant {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: white;
+    }
+
+    .restaurant-image {
+      width: 100%;
+      height: 165px;
+      display: block;
+      object-fit: cover;
+      background: var(--sand);
+    }
+
+    .restaurant-body { padding: 16px; }
+
+    .restaurant h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+    }
+
+    .restaurant p {
+      margin: 6px 0;
+      color: #596a65;
+      font-size: 13px;
+    }
+
+    .restaurant .tip {
+      margin-top: 10px;
+      padding: 9px 10px;
+      border-radius: 9px;
+      background: #f4f7f1;
+      color: #415e51;
+    }
+
+    .dish-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dish {
+      padding: 15px;
+      border-radius: 13px;
+      background: #f7f4ec;
+    }
+
+    .dish h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
+
+    .dish p {
+      margin: 0;
+      color: #6a6e61;
+      font-size: 13px;
+    }
+
+    .note {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-left: 4px solid #d2a75f;
+      border-radius: 8px;
+      background: #fbf4e6;
+      color: #67553a;
+      font-size: 13px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 11px;
+      border-radius: 10px;
+      background: #f5f8f4;
+      font-size: 14px;
+    }
+
+    .check-item input {
+      width: 17px;
+      height: 17px;
+      margin-top: 4px;
+      accent-color: var(--primary);
+    }
+
+    footer {
+      padding: 28px 15px 40px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(0,0,0,.9);
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 94vw;
+      max-height: 86vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      background: rgba(255,255,255,.15);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    .lightbox-hint {
+      position: absolute;
+      bottom: 15px;
+      color: white;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      .hero { min-height: 370px; padding: 42px 20px; }
+      .panel { padding: 19px; }
+      .overview-grid,
+      .restaurant-grid { grid-template-columns: 1fr; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+      .restaurant-image { height: 190px; }
+      .dish-grid,
+      .checklist { grid-template-columns: 1fr; }
+      .section-heading { font-size: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">ZHOUSHAN · ISLAND ROAD TRIP</span>
+      <h1>舟山两日自驾游</h1>
+      <p>沿着海岸线看海、走进沙滩与礁石，再用一顿地道海鲜，为这趟海岛之旅收尾。</p>
+      <div class="hero-tags">
+        <span>📅 10月31日—11月1日</span>
+        <span>🚗 自驾出行</span>
+        <span>🌊 朱家尖 · 沈家门</span>
+        <span>🏨 东港住宿</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="quick-nav">
+      <a href="#overview">行程概览</a>
+      <a href="#day1">第一天</a>
+      <a href="#day2">第二天</a>
+      <a href="#attractions">景点照片</a>
+      <a href="#restaurants">餐饮推荐</a>
+      <a href="#food">舟山特色</a>
+      <a href="#checklist">出发清单</a>
+    </nav>
+
+    <section class="panel" id="overview">
+      <h2 class="section-heading">行程概览</h2>
+      <p class="section-intro">两天一晚，以朱家尖海岸风景为主，第二天轻松游玩后返程。</p>
+
+      <div class="overview-grid">
+        <div class="overview-item">
+          <span class="label">出行日期</span>
+          <strong>2026年10月31日—11月1日</strong>
+        </div>
+        <div class="overview-item">
+          <span class="label">交通方式</span>
+          <strong>自驾</strong>
+        </div>
+        <div class="overview-item">
+          <span class="label">住宿酒店</span>
+          <strong>全季酒店（舟山东港店）</strong>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=全季酒店舟山东港店&city=舟山市&view=map">
+            高德地图导航 ↗
+          </a>
+        </div>
+        <div class="overview-item">
+          <span class="label">主要游玩区域</span>
+          <strong>大青山、南沙、乌石塘、沈家门</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="day1">
+      <div class="route-day">
+        <div class="day-number">DAY 1<small>10.31</small></div>
+        <div>
+          <h3>海岸公路、沙滩与海鲜晚餐</h3>
+          <p>朱家尖风景线 · 晚上入住东港</p>
+        </div>
+      </div>
+
+      <div class="route-line">
+        <div class="stop">
+          <div class="stop-time">上午 · 第一站</div>
+          <h4>大青山国家公园</h4>
+          <p>沿海岸公路欣赏山海相接的风景，适合停车观景、拍照。园区路线和开放情况以当天公告为准。</p>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=朱家尖大青山国家公园&city=舟山市&view=map">
+            高德地图导航 ↗
+          </a>
+        </div>
+
+        <div class="stop">
+          <div class="stop-time">中午前后 · 第二站</div>
+          <h4>南沙景区</h4>
+          <p>看沙滩、海岸线和海边景观。可以根据现场情况安排散步、拍照和休息，预留一些时间享受海边氛围。</p>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=朱家尖南沙景区&city=舟山市&view=map">
+            高德地图导航 ↗
+          </a>
+        </div>
+
+        <div class="stop">
+          <div class="stop-time">下午 · 返回酒店</div>
+          <h4>全季酒店（舟山东港店）</h4>
+          <p>办理入住、休息片刻，再出发去沈家门吃海鲜。具体入住时间以酒店订单为准。</p>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=全季酒店舟山东港店&city=舟山市&view=map">
+            高德地图导航 ↗
+          </a>
+        </div>
+
+        <div class="stop">
+          <div class="stop-time">傍晚 · 晚餐</div>
+          <h4>沈家门滨港路海鲜晚餐</h4>
+          <p>晚上可以前往沈家门一带寻找海鲜排档，重点尝试葱油梭子蟹、舟山带鱼和海鲜炒年糕。点菜前先确认时价、份量和加工费。</p>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=沈家门滨港路海鲜排档&city=舟山市&view=map">
+            高德地图搜索餐厅 ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="day2">
+      <div class="route-day">
+        <div class="day-number">DAY 2<small>11.01</small></div>
+        <div>
+          <h3>乌石塘与悠闲返程</h3>
+          <p>看黑色鹅卵石海岸，午餐后返程</p>
+        </div>
+      </div>
+
+      <div class="route-line">
+        <div class="stop">
+          <div class="stop-time">上午</div>
+          <h4>乌石塘景区</h4>
+          <p>这里的特色是由乌黑色鹅卵石构成的海岸。适合沿岸散步、观察礁石与海浪，拍一些不同于沙滩的海景照片。</p>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=朱家尖乌石塘景区&city=舟山市&view=map">
+            高德地图导航 ↗
+          </a>
+        </div>
+
+        <div class="stop">
+          <div class="stop-time">中午</div>
+          <h4>午餐与返程准备</h4>
+          <p>可以在朱家尖或东港附近吃海鲜面、海鲜炒年糕等当地特色。用餐后检查随身物品，再按实际交通情况返程。</p>
+          <a class="map-link" target="_blank" rel="noopener"
+             href="https://uri.amap.com/search?keyword=朱家尖海鲜面&city=舟山市&view=map">
+            高德地图搜索餐饮 ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="attractions">
+      <h2 class="section-heading">景点实景照片</h2>
+      <p class="section-intro">每个景点安排多张图片，点击照片可以查看大图。图片来自网络旅游图片来源，外链是否持续有效取决于原网站。</p>
+
+      <article class="attraction">
+        <h3>01 · 大青山国家公园</h3>
+        <p>看点：海岸公路、山海视野、沿途观景点。自驾时请在允许停车的位置停靠，不要在道路上临时停车拍照。</p>
+
+        <div class="photo-grid">
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://dimg04.c-ctrip.com/images/10071f000001h6wpm1C99_W_750_0.jpg?proc=autoorient"
+              alt="朱家尖大青山海岸公路"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>大青山海岸公路</figcaption>
+          </figure>
+
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://dimg04.c-ctrip.com/images/0102f12000j14kn8qFD57.jpg"
+              alt="大青山海岸观景风光"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>海岸观景风光</figcaption>
+          </figure>
+
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://ak-d.tripcdn.com/images/0EQ2112000sogi12x3747.jpg?proc=source%2Ftrip"
+              alt="大青山山海风光"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>山海相接的景色</figcaption>
+          </figure>
+        </div>
+
+        <a class="map-link" target="_blank" rel="noopener"
+           href="https://uri.amap.com/search?keyword=朱家尖大青山国家公园&city=舟山市&view=map">
+          景点高德导航 ↗
+        </a>
+      </article>
+
+      <article class="attraction">
+        <h3>02 · 南沙景区</h3>
+        <p>看点：沙滩、海岸线和开阔的海景。秋季海边风可能较大，建议带一件防风外套。</p>
+
+        <div class="photo-grid">
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://p7.itc.cn/q_70/images01/20210509/994bfe899a6b409d9122b9fe9ea20923.jpeg"
+              alt="朱家尖南沙沙滩实景"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>南沙沙滩</figcaption>
+          </figure>
+
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://dimg04.c-ctrip.com/images/10071f000001h6wpm1C99_W_750_0.jpg?proc=autoorient"
+              alt="朱家尖海岸风景参考"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>朱家尖海岸风景参考</figcaption>
+          </figure>
+        </div>
+
+        <a class="map-link" target="_blank" rel="noopener"
+           href="https://uri.amap.com/search?keyword=朱家尖南沙景区&city=舟山市&view=map">
+          景点高德导航 ↗
+        </a>
+      </article>
+
+      <article class="attraction">
+        <h3>03 · 乌石塘景区</h3>
+        <p>看点：黑色鹅卵石海岸、海浪和独特的礁石质感。行走时注意湿滑石面和浪涌，不要攀爬危险礁石。</p>
+
+        <div class="photo-grid">
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://img.pconline.com.cn/images/upload/upc/tx/photoblog/1103/05/c2/6908056_6908056_1299295901187_mthumb.jpg"
+              alt="朱家尖乌石塘黑色鹅卵石海岸"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>乌石塘鹅卵石海岸</figcaption>
+          </figure>
+
+          <figure class="photo" onclick="openPhoto(this)">
+            <img
+              src="https://dimg04.c-ctrip.com/images/0102f12000j14kn8qFD57.jpg"
+              alt="舟山海岸与海浪风光参考"
+              loading="lazy"
+              onerror="imageError(this)">
+            <figcaption>舟山海岸风光参考</figcaption>
+          </figure>
+        </div>
+
+        <a class="map-link" target="_blank" rel="noopener"
+           href="https://uri.amap.com/search?keyword=朱家尖乌石塘景区&city=舟山市&view=map">
+          景点高德导航 ↗
+        </a>
+      </article>
+
+      <div class="note">
+        图片显示说明：若某张图片无法加载，通常是原网站调整了图片地址、限制了外部访问或网络连接异常。可以先点击图片所在位置确认，或通过高德地图打开景点页面查看最新游客实拍照片。
+      </div>
+    </section>
+
+    <section class="panel" id="restaurants">
+      <h2 class="section-heading">餐饮推荐</h2>
+      <p class="section-intro">优先考虑朱家尖游玩区域和东港、沈家门住宿区域，尽量减少来回绕路。餐厅营业情况、菜单和价格以到店为准。</p>
+
+      <div class="restaurant-grid">
+        <article class="restaurant">
+          <img
+            class="restaurant-image"
+            src="https://p7.itc.cn/q_70/images01/20210509/994bfe899a6b409d9122b9fe9ea20923.jpeg"
+            alt="朱家尖海边景色"
+            loading="lazy"
+            onerror="imageError(this)">
+
+          <div class="restaurant-body">
+            <h3>海边人家海鲜城（朱家尖店）</h3>
+            <p><strong>适合：</strong>第一天在朱家尖游玩结束后就近吃饭。</p>
+            <p><strong>可关注：</strong>葱油膏蟹、海鲜炒年糕、椒盐龙头鱼等海鲜菜品。</p>
+            <p><strong>位置：</strong>可通过高德地图核对门店位置与营业状态。</p>
+            <a class="map-link" target="_blank" rel="noopener"
+               href="https://uri.amap.com/search?keyword=海边人家海鲜城朱家尖店&city=舟山市&view=map">
+              高德地图找店 ↗
+            </a>
+            <p class="tip">点海鲜前先问清楚按份、按只还是按斤计价。</p>
+          </div>
+        </article>
+
+        <article class="restaurant">
+          <img
+            class="restaurant-image"
+            src="https://dimg04.c-ctrip.com/images/0102f12000j14kn8qFD57.jpg"
+            alt="朱家尖海岸景色"
+            loading="lazy"
+            onerror="imageError(this)">
+
+          <div class="restaurant-body">
+            <h3>金海湾海鲜排档（朱家尖店）</h3>
+            <p><strong>适合：</strong>游览南沙一带后寻找海鲜正餐。</p>
+            <p><strong>可关注：</strong>葱油梭子蟹、红烧舟山带鱼、海鲜炒年糕、椒盐豆腐鱼。</p>
+            <p><strong>位置：</strong>建议导航前确认具体门店名称与地址。</p>
+            <a class="map-link" target="_blank" rel="noopener"
+               href="https://uri.amap.com/search?keyword=金海湾海鲜排档朱家尖店&city=舟山市&view=map">
+              高德地图找店 ↗
+            </a>
+            <p class="tip">如果计划在景区附近用餐，建议提前查看营业时间和近期评价。</p>
+          </div>
+        </article>
+
+        <article class="restaurant">
+          <img
+            class="restaurant-image"
+            src="https://ak-d.tripcdn.com/images/0EQ2112000sogi12x3747.jpg?proc=source%2Ftrip"
+            alt="舟山海岸风光"
+            loading="lazy"
+            onerror="imageError(this)">
+
+          <div class="restaurant-body">
+            <h3>笑嘻嘻海鲜大排档（沈家门店）</h3>
+            <p><strong>适合：</strong>第一天晚上专程去沈家门吃海鲜。</p>
+            <p><strong>可关注：</strong>葱油梭子蟹、大黄鱼及当日新鲜海产。</p>
+            <p><strong>位置：</strong>沈家门区域，出发前用地图确认具体门店。</p>
+            <a class="map-link" target="_blank" rel="noopener"
+               href="https://uri.amap.com/search?keyword=笑嘻嘻海鲜大排档沈家门店&city=舟山市&view=map">
+              高德地图找店 ↗
+            </a>
+            <p class="tip">海鲜时价波动较大，建议先看价目表，再确认做法和加工费用。</p>
+          </div>
+        </article>
+
+        <article class="restaurant">
+          <img
+            class="restaurant-image"
+            src="https://dimg04.c-ctrip.com/images/10071f000001h6wpm1C99_W_750_0.jpg?proc=autoorient"
+            alt="舟山海岸风景"
+            loading="lazy"
+            onerror="imageError(this)">
+
+          <div class="restaurant-body">
+            <h3>高佳庄·舟山海鲜（东港店）</h3>
+            <p><strong>适合：</strong>住宿酒店附近用餐，或不想晚上开车跑太远时选择。</p>
+            <p><strong>可关注：</strong>红烧舟山带鱼、白灼虾及当日海鲜。</p>
+            <p><strong>位置：</strong>东港区域，建议通过地图确认门店及营业情况。</p>
+            <a class="map-link" target="_blank" rel="noopener"
+               href="https://uri.amap.com/search?keyword=高佳庄舟山海鲜东港店&city=舟山市&view=map">
+              高德地图找店 ↗
+            </a>
+            <p class="tip">如果更看重方便，可以优先选择酒店附近、近期评价较好的门店。</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="note">
+        餐厅推荐用于行程参考，不代表已核实当日营业或预订状态。出发前请在高德地图核对门店是否仍在营业、实际地址和最新评价；如果店名搜索结果有多个，请以完整地址和门店信息为准。
+      </div>
+    </section>
+
+    <section class="panel" id="food">
+      <h2 class="section-heading">来舟山值得尝试的特色</h2>
+      <p class="section-intro">如果不想每顿都点一桌海鲜，可以从以下几种当地风味中挑选。</p>
+
+      <div class="dish-grid">
+        <div class="dish">
+          <h3>🦀 葱油梭子蟹</h3>
+          <p>舟山常见海鲜菜式，突出蟹肉鲜甜和葱油香气。</p>
+        </div>
+
+        <div class="dish">
+          <h3>🐟 红烧舟山带鱼</h3>
+          <p>带鱼是舟山代表性海产之一，红烧做法适合搭配米饭。</p>
+        </div>
+
+        <div class="dish">
+          <h3>🍜 海鲜面</h3>
+          <p>适合第二天午餐，面条搭配虾、贝类或其他当日海鲜。</p>
+        </div>
+
+        <div class="dish">
+          <h3>🥢 海鲜炒年糕</h3>
+          <p>年糕吸收海鲜汤汁，适合多人共享，也可以作为一顿简餐。</p>
+        </div>
+
+        <div class="dish">
+          <h3>🦐 白灼虾</h3>
+          <p>做法简单，容易品尝虾本身的鲜味，适合不喜欢重口味的人。</p>
+        </div>
+
+        <div class="dish">
+          <h3>🐠 椒盐豆腐鱼</h3>
+          <p>舟山餐馆常见的海鲜做法之一，点餐时可先确认是否有当日鲜货。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="checklist">
+      <h2 class="section-heading">出发前检查清单</h2>
+      <p class="section-intro">可以在手机上逐项勾选。</p>
+
+      <div class="checklist">
+        <label class="check-item">
+          <input type="checkbox">
+          <span>确认酒店订单、入住时间和停车安排</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>检查车辆、油量、轮胎和导航路线</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>查看大青山、南沙、乌石塘的开放及门票信息</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>查看天气、风力和海边活动提示</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>准备防风外套、舒适鞋和充电设备</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>提前核对餐厅地址、营业状态和菜单价格</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>准备身份证件及必要的个人用品</span>
+        </label>
+
+        <label class="check-item">
+          <input type="checkbox">
+          <span>出发前重新确认返程路线与交通状况</span>
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>舟山两日自驾游 · 2026.10.31—11.01</p>
+    <p>景区开放、交通、天气及餐厅信息请以出行当天的官方公告和实际情况为准。</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closePhoto(event)">
+    <button class="lightbox-close" aria-label="关闭图片" onclick="closePhoto(event)">×</button>
+    <img id="lightbox-image" src="" alt="景点大图">
+    <div class="lightbox-hint">点击空白区域或右上角 × 关闭</div>
+  </div>
+
+  <script>
+    function openPhoto(figure) {
+      const image = figure.querySelector("img");
+      if (!image || !image.src) return;
+
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt || "景点照片";
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePhoto(event) {
+      if (event && event.target.id === "lightbox-image") return;
+
+      const lightbox = document.getElementById("lightbox");
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function imageError(image) {
+      image.alt = "图片暂时无法加载，请通过景点地图链接查看实景照片";
+      image.style.opacity = "0.35";
+      image.title = "原始图片链接可能失效或限制外部访问";
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.getElementById("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
+</body>
+</html>
