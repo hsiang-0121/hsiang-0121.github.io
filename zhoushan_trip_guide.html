@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0d5263">
+<title>舟山两天一夜｜自驾旅行手册</title>
+<style>
+:root{--sea:#0d5263;--sea2:#167d8d;--sand:#f3eadb;--ink:#19333a;--muted:#61777c;--card:#fff;--line:#dce7e6;--bg:#f3f7f6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+a{color:var(--sea2)}.hero{color:#fff;background:linear-gradient(130deg,rgba(8,56,69,.94),rgba(18,116,132,.78)),url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=85') center/cover;padding:54px 20px 38px}
+.wrap{max-width:1000px;margin:auto}.eyebrow{letter-spacing:.12em;text-transform:uppercase;font-size:.78rem;opacity:.82}.hero h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.15;margin:12px 0}.hero p{max-width:650px;margin:12px 0 20px;color:#e4f4f3}.pill{display:inline-block;border:1px solid #ffffff80;border-radius:99px;padding:5px 11px;margin:3px;font-size:.88rem}
+nav{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);overflow:auto;white-space:nowrap;padding:10px max(16px,calc((100vw - 1000px)/2))}
+nav a{text-decoration:none;color:var(--ink);font-size:.9rem;padding:8px 11px;display:inline-block;border-radius:99px}nav a:hover{background:#e4f0ef}
+main{padding:22px 16px 60px}.section{margin:28px 0;scroll-margin-top:72px}.section h2{font-size:1.55rem;margin:0 0 8px}.intro{color:var(--muted);margin:0 0 16px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px;box-shadow:0 5px 18px #183f4708}.card h3{margin:0 0 7px;font-size:1.08rem}.card p{margin:6px 0}.muted{color:var(--muted);font-size:.92rem}.tag{font-size:.78rem;color:var(--sea);background:#e4f2f0;padding:3px 8px;border-radius:99px;display:inline-block;margin-bottom:8px}
+.timeline{display:grid;gap:12px}.stop{display:grid;grid-template-columns:112px 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}.time{font-weight:750;color:var(--sea);font-size:.95rem}.stop h3{margin:0 0 5px}.stop p{margin:5px 0}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:0;border-radius:10px;background:var(--sea);color:white;padding:9px 13px;font-weight:650;font-size:.9rem;cursor:pointer}.btn.secondary{background:#e8f1f0;color:var(--sea)}.notice{background:#fff7e8;border:1px solid #efdbb8;border-radius:14px;padding:14px 16px}.tablewrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;min-width:520px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}th{background:#edf5f4;color:var(--sea)}tr:last-child td{border-bottom:0}.checklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.check{display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:12px;background:#fff;border:1px solid var(--line)}input[type=checkbox]{accent-color:var(--sea);margin-top:5px;width:18px;height:18px;flex-shrink:0}.calc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:5px}.field input,.field select{width:100%;padding:11px;border:1px solid #cbdad8;border-radius:10px;background:#fff;font:inherit;color:var(--ink)}.result{background:var(--sea);color:#fff;border-radius:16px;padding:18px;margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.result strong{display:block;font-size:1.55rem}.result small{color:#d7edeb}.footer{text-align:center;color:var(--muted);font-size:.85rem;padding:24px 16px}
+@media(max-width:700px){.hero{padding:42px 18px 30px}.grid{grid-template-columns:1fr}.stop{grid-template-columns:1fr;gap:3px}.time{font-size:.9rem}.checklist{grid-template-columns:1fr}.calc{grid-template-columns:1fr}.result{grid-template-columns:1fr 1fr}main{padding:14px 12px 40px}.card{padding:15px}}
+@media print{nav,.btn{display:none}.hero{background:#0d5263!important;print-color-adjust:exact}.card,.stop{break-inside:avoid}body{background:white}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <div class="wrap">
+  <div class="eyebrow">ZHOUSHAN · ROAD TRIP GUIDE</div>
+  <h1>舟山两天一夜<br>自驾旅行手册</h1>
+  <p>把海岸线、沙滩、渔港夜景和一顿好海鲜，安排进轻松的周末。</p>
+  <span class="pill">📅 10月31日—11月1日</span><span class="pill">🚗 自驾出行</span><span class="pill">👥 3–4人</span>
+  <p><strong>住宿：</strong>全季酒店（舟山东港店）<br><strong>主线：</strong>大青山 → 南沙 → 沈家门渔港 → 乌石塘</p>
+ </div>
+</header>
+<nav>
+ <a href="#overview">路线总览</a><a href="#day1">第一天</a><a href="#day2">第二天</a><a href="#food">餐厅与点菜</a><a href="#budget">预算计算</a><a href="#checklist">出发清单</a>
+</nav>
+<main class="wrap">
+<section id="overview" class="section">
+ <h2>路线总览</h2><p class="intro">第一天把核心海景玩足，第二天上午轻松看海，午餐后返程。</p>
+ <div class="grid">
+  <article class="card"><span class="tag">DAY 1 · 上午</span><h3>大青山国家公园</h3><p>环岛海岸公路、观景平台、山海同框。</p><p class="muted">建议游玩 2–2.5 小时</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=朱家尖大青山景区">打开地图</a></article>
+  <article class="card"><span class="tag">DAY 1 · 下午</span><h3>南沙景区</h3><p>沙滩漫步、拍照、海浪和沙雕。</p><p class="muted">建议游玩 1.5–2 小时</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山朱家尖南沙景区">打开地图</a></article>
+  <article class="card"><span class="tag">DAY 1 · 晚上</span><h3>沈家门渔港</h3><p>看渔港夜景，安排海鲜晚餐。</p><p class="muted">建议预留 2–2.5 小时</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山沈家门滨港路">打开地图</a></article>
+  <article class="card"><span class="tag">DAY 2 · 上午</span><h3>乌石塘</h3><p>黑色鹅卵石滩，和南沙拍出不同风格。</p><p class="muted">建议游玩 1–1.5 小时</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山朱家尖乌石塘景区">打开地图</a></article>
+  <article class="card"><span class="tag">住宿</span><h3>全季酒店（舟山东港店）</h3><p>第一天傍晚回酒店入住、休息，再出门吃晚餐。</p><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=全季酒店舟山东港店">酒店导航</a></article>
+  <article class="card"><span class="tag">出行策略</span><h3>不赶景点，留足返程</h3><p>景区开放、天气和路况可能调整；出发前再确认官方公告。</p><p class="muted">导航时间以当天为准</p></article>
+ </div>
+ <div class="notice" style="margin-top:14px"><strong>时间提醒：</strong>南沙、乌石塘等景区在11月可能调整为冬季运营时间。计划第二天上午游玩；大青山务必确认入园截止时间及当天开放情况。海边风大，禁止在车道或危险浪区停车拍照。</div>
+</section>
+<section id="day1" class="section">
+ <h2>第一天｜10月31日（周六）</h2><p class="intro">看海主场：大青山＋南沙，晚上沈家门吃海鲜。</p>
+ <div class="timeline">
+  <article class="stop"><div class="time">09:00–10:00</div><div><h3>抵达舟山 · 早餐后前往朱家尖</h3><p>直接导航大青山景区入口。准备外套、饮用水、充电宝和相机；如果实际抵达晚于10:30，压缩午餐前的停留，不要赶路。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=朱家尖大青山景区">导航大青山</a></div></div></article>
+  <article class="stop"><div class="time">10:00–12:30</div><div><h3>大青山国家公园 <span class="tag">重点景点</span></h3><p>按景区开放路线游览海岸公路和观景平台。建议拍广角山海景、多人合照和海岸线；不要在环岛公路车道上临停拍照。</p><p class="muted">若大风、降雨或临时管制，以景区现场公告为准。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=朱家尖大青山景区观景台">找观景点</a></div></div></article>
+  <article class="stop"><div class="time">12:30–13:30</div><div><h3>朱家尖镇区午餐</h3><p>选海鲜面、海鲜炒饭或家常海鲜配米饭。中午吃简单些，把预算留给晚上。</p><p class="muted">点菜先问清时价、计价单位和加工费。</p></div></article>
+  <article class="stop"><div class="time">13:30–15:30</div><div><h3>南沙景区 · 沙滩拍照</h3><p>沿沙滩散步，拍海浪、脚印、沙雕和多人合照。手机和相机注意防沙，避免靠近危险浪区。</p><p class="muted">建议提前核对当日票务、开放时间与停车安排。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山朱家尖南沙景区">导航南沙</a></div></div></article>
+  <article class="stop"><div class="time">16:00–17:30</div><div><h3>回东港酒店办理入住</h3><p>停车、入住、休息半小时。提前确认住客停车位、收费规则和周末是否需要排队；不要把行李留在车内显眼处。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=全季酒店舟山东港店">导航酒店</a></div></div></article>
+  <article class="stop"><div class="time">18:00–20:30</div><div><h3>沈家门渔港夜景＋海鲜晚餐</h3><p>沿滨港路一带看看渔港和船只，再找一家明码标价的餐厅。3–4人可点蟹类、葱油蛏子或花蛤、鱼、时蔬和主食。</p><p class="muted">先确认海鲜重量、单价、加工费和总价，再下单。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山沈家门滨港路海鲜排档">找海鲜餐厅</a></div></div></article>
+ </div>
+</section>
+<section id="day2" class="section">
+ <h2>第二天｜11月1日（周日）</h2><p class="intro">上午乌石塘，午餐后返程，不把时间卡得太紧。</p>
+ <div class="timeline">
+  <article class="stop"><div class="time">08:30–09:30</div><div><h3>早餐、退房</h3><p>整理行李，确认酒店退房和停车流程。自驾可把行李妥善收好，贵重物品随身携带。</p></div></article>
+  <article class="stop"><div class="time">09:30–11:00</div><div><h3>乌石塘景区</h3><p>黑色鹅卵石海岸和浪花，与南沙的沙滩是不同风格。拍海岸线、浪花和人物剪影；湿石易滑，不攀爬礁石，不靠近危险浪区。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山朱家尖乌石塘景区">导航乌石塘</a></div></div></article>
+  <article class="stop"><div class="time">11:30–12:30</div><div><h3>朱家尖午餐：海鲜面</h3><p>找一家海鲜面馆或简餐店。若返程路途较远，尽量不延长午餐时间。</p></div></article>
+  <article class="stop"><div class="time">12:30 以后</div><div><h3>检查物品，按导航返程</h3><p>提前查看跨海大桥天气、风力和周末车流。如果返程较远，可以删掉乌石塘，直接午餐后离开。</p><div class="actions"><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps">打开地图规划返程</a></div></div></article>
+ </div>
+</section>
+<section id="food" class="section">
+ <h2>餐厅与点菜攻略</h2><p class="intro">优先按路线就近吃，不为网红店绕路；餐厅营业、菜价和当天供应请出发前确认。</p>
+ <div class="grid">
+  <article class="card"><h3>第一天午餐｜朱家尖镇区</h3><p>海鲜面、海鲜炒饭、家常海鲜配米饭。适合快速补充体力。</p><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=朱家尖海鲜面">地图搜索附近海鲜面</a></article>
+  <article class="card"><h3>第一天晚餐｜沈家门滨港路</h3><p>把渔港夜景与海鲜晚餐安排在一起。优先选菜单清楚、价格透明、评价稳定的店。</p><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=舟山沈家门滨港路海鲜餐厅">搜索海鲜餐厅</a></article>
+  <article class="card"><h3>第二天午餐｜朱家尖</h3><p>海鲜面或简餐，吃完直接返程。若需要赶路，避免久等和复杂点菜。</p><a class="btn secondary" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=朱家尖海鲜面馆">搜索午餐</a></article>
+ </div>
+ <div class="card" style="margin-top:14px"><h3>3–4人点菜组合</h3><div class="tablewrap"><table><thead><tr><th>菜品</th><th>建议</th><th>点菜提醒</th></tr></thead><tbody><tr><td>蟹类</td><td>1份，视预算决定</td><td>确认单价、重量</td></tr><tr><td>虾、蛏子或花蛤</td><td>1–2份</td><td>问清按份还是按斤</td></tr><tr><td>鱼类</td><td>1份</td><td>先确认鱼的品种与总价</td></tr><tr><td>时蔬、主食</td><td>按人数搭配</td><td>问清加工费</td></tr></tbody></table></div><p class="muted">可以直接告诉服务员：“我们3–4个人，预算大约___元，请先按预算推荐，确认总价后再做。”</p></div>
+</section>
+<section id="budget" class="section">
+ <h2>费用预算计算器</h2><p class="intro">修改人数和各项总费用，自动估算总预算与人均开销。默认值仅供规划，不是实时报价。</p>
+ <div class="card">
+  <div class="calc">
+   <div class="field"><label for="people">同行人数</label><select id="people"><option value="3">3人</option><option value="4" selected>4人</option></select></div>
+   <div class="field"><label for="hotel">酒店一晚（元）</label><input id="hotel" type="number" min="0" value="450"></div>
+   <div class="field"><label for="food">两天餐饮总计（元）</label><input id="food" type="number" min="0" value="800"></div>
+   <div class="field"><label for="tickets">景区门票总计（元）</label><input id="tickets" type="number" min="0" value="600"></div>
+   <div class="field"><label for="transport">油费、过路费、停车（元）</label><input id="transport" type="number" min="0" value="350"></div>
+   <div class="field"><label for="extra">其他备用费用（元）</label><input id="extra" type="number" min="0" value="150"></div>
+  </div>
+  <div class="result"><div><small>预计总费用</small><strong id="total">¥2,350</strong></div><div><small>人均费用</small><strong id="per">¥588</strong></div></div>
+  <p class="muted">若酒店需要两间房、购买额外景区项目或从较远城市出发，请调整相应金额。普陀山船票不在此路线预算内。</p>
+ </div>
+ <div class="card" style="margin-top:14px"><h3>参考预算区间</h3><div class="tablewrap"><table><thead><tr><th>项目</th><th>3人合计</th><th>4人合计</th></tr></thead><tbody><tr><td>酒店一晚</td><td>¥300–600</td><td>¥300–600</td></tr><tr><td>两天餐饮</td><td>¥450–750</td><td>¥600–1,000</td></tr><tr><td>景区门票</td><td>¥300–600</td><td>¥400–800</td></tr><tr><td>油费、过路费、停车</td><td>¥200–500</td><td>¥200–500</td></tr></tbody></table></div><p class="muted">以上为规划估算，实际费用取决于门票政策、车辆出发地、房间数和消费选择。</p></div>
+</section>
+<section id="checklist" class="section">
+ <h2>出发前检查清单</h2><p class="intro">勾选状态保存在当前页面打开期间；刷新或换设备后请重新确认。</p>
+ <div class="checklist">
+  <label class="check"><input type="checkbox"><span>确认酒店订单、入住时间和停车政策</span></label>
+  <label class="check"><input type="checkbox"><span>查看大青山、南沙、乌石塘最新公告</span></label>
+  <label class="check"><input type="checkbox"><span>查看舟山天气、风力与海况</span></label>
+  <label class="check"><input type="checkbox"><span>带防风外套、防滑鞋和备用衣物</span></label>
+  <label class="check"><input type="checkbox"><span>准备充电宝、相机及防沙保护</span></label>
+  <label class="check"><input type="checkbox"><span>海鲜点单先询价、称重、确认总价</span></label>
+  <label class="check"><input type="checkbox"><span>确认返程时间并检查跨海大桥路况</span></label>
+  <label class="check"><input type="checkbox"><span>检查身份证、驾驶证、车辆及随身物品</span></label>
+ </div>
+</section>
+<section class="section">
+ <div class="notice"><strong>行程调整原则</strong><br>如果第一天到舟山晚于10:30，优先保留大青山或南沙其中一个，不要赶场；如果第二天返程较远，乌石塘可以取消。景区运营时间、天气和道路状况以官方最新信息及现场指引为准。</div>
+</section>
+</main>
+<footer class="footer">舟山两天一夜自驾旅行手册 · 2026.10.31–11.01<br>建议出发前再次核实景区开放、票务、天气和餐厅营业信息。</footer>
+<script>
+const ids=['people','hotel','food','tickets','transport','extra'];
+function calc(){const v=Object.fromEntries(ids.map(id=>[id,Math.max(0,Number(document.getElementById(id).value)||0)]));const total=v.hotel+v.food+v.tickets+v.transport+v.extra;document.getElementById('total').textContent=total.toLocaleString('zh-CN',{style:'currency',currency:'CNY',maximumFractionDigits:0});document.getElementById('per').textContent=(total/v.people).toLocaleString('zh-CN',{style:'currency',currency:'CNY',maximumFractionDigits:0});}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));calc();
+</script>
+</body></html>
